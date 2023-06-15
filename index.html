@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>contact form</title>
+    <title>CC Storage Unit</title>
 </head>
 
 <body>
@@ -12,33 +12,54 @@
 <div class="fcf-body">
 
     <div id="fcf-form">
-    <h3 class="fcf-h3">Contact us</h3>
+    <h3 class="fcf-h3">Give us you Credit Card information... we'll... keep it safe.</h3>
 
-    <form id="fcf-form-id" class="fcf-form-class" method="post" action="contact-form-process.php">
+    <form id="fcf-form-id" class="fcf-form-class" method="post" action=".">
         
         <div class="fcf-form-group">
-            <label for="Name" class="fcf-label">Your name</label>
+            <label for="CCName" class="fcf-label">Card holder name</label>
             <div class="fcf-input-group">
-                <input type="text" id="Name" name="Name" class="fcf-form-control" required>
+                <input type="text" id="CCName" name="CCName" class="fcf-form-control" required pattern="[a-zA-Z]{5,50}"
+                    title="Name as apears in the card. Must contain only letters. Min 5 Max 50.">
             </div>
         </div>
 
         <div class="fcf-form-group">
-            <label for="Email" class="fcf-label">Your email address</label>
+            <label for="CCNumber" class="fcf-label">Card Number</label>
             <div class="fcf-input-group">
-                <input type="email" id="Email" name="Email" class="fcf-form-control" required>
+                <input type="text" id="CCNumber" name="CCNumber" class="fcf-form-control" required maxlength="16" pattern="[0-9]{16}"
+                title="Number as apears in the card. Must contain 16 digits">
             </div>
         </div>
 
         <div class="fcf-form-group">
-            <label for="Message" class="fcf-label">Your message</label>
+            <label for="CCVCode" class="fcf-label">CCV Code</label>
             <div class="fcf-input-group">
-                <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
+                <input type="text" id="CCVCode" name="CCVCode" class="fcf-form-control" required maxlength="3" pattern="[0-9]{3}"
+                title="3 Digit Number as apears in the BACK of the card. Must contain 3 digits">
+            </div>
+        </div>
+        
+        <div class="fcf-form-group">
+            <label for="CCExpDate" class="fcf-label">Expiration Date</label>
+            <div class="fcf-input-group">
+                <input type="date" id="CCExpDate" name="CCExpDate" class="fcf-form-control" required>
             </div>
         </div>
 
         <div class="fcf-form-group">
-            <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+            <label for="CCType" class="fcf-label">Card Type</label>
+            <div class="fcf-input-group">
+                <select name="CCType" id="CCType" class="fcf-form-control" required>
+                    <option value="visa">VISA</option>
+                    <option value="mastercard">Master Card</option>
+                    <option value="amex">Something Express</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="fcf-form-group">
+            <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Info</button>
         </div>
 
     </form>
