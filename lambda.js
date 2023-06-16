@@ -52,7 +52,7 @@ async function getCards() {
         const body = {
             Operation: 'Getting all Cards from DB',
             Message: 'SUCCESS! Card added to DB.',
-            Cards: allCards
+            Cards: allCards.Items
         }
         return body;
     }, (error) => {
@@ -64,8 +64,12 @@ function buildResponse(statusCode, body) {
     return {
         statusCode: statusCode,
         headers: {
-            'Content-Type': 'application/json'
+            "Access-Control-Allow-Headers" : "Content-Type",
+            "Access-Control-Allow-Origin": "https://automaticom.cloud",
+            "Access-Control-Allow-Methods": "POST,GET,OPTIONS",
+            "Content-Type": "application/json"
         },
         body: JSON.stringify(body)
     }
 }
+

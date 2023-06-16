@@ -11,11 +11,14 @@ const sendCardToDB = async () => {
     }
     console.log(body);
 
-    const response = await fetch('https://vt8izmxwie.execute-api.eu-central-1.amazonaws.com/default/HoldMyCC', {
+    const response = await fetch('https://e1vtmi4pk6.execute-api.eu-central-1.amazonaws.com/prod', {
         method: 'POST',
         body: body,
         headers: {
-        'Content-Type': 'application/json'
+            "Access-Control-Allow-Headers" : "Content-Type",
+            "Access-Control-Allow-Origin": "https://automaticom.cloud",
+            "Access-Control-Allow-Methods": "POST,GET,OPTIONS",
+            "Content-Type": "application/json"
         }
     });
     const myJson = await response.json();
